@@ -9,7 +9,8 @@ post '/payload' do
             puts "issue edited. Title changed from: " + var["changes"]["title"]["from"]
             var["action"] = "updated"
             httppost(var)
-        elsif var["changes"]["body"]
+        end
+        if var["changes"]["body"]
             puts "issue edited. Body changed from: " + var["changes"]["body"]["from"]
             var["action"] = "updated"
             httppost(var)
